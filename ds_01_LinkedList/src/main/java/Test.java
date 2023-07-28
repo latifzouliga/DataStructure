@@ -20,5 +20,43 @@ public class Test {
         //System.out.println(myList.isEmpty());
 
         myList.printNodes();
+
+        // test deleteNodeById method
+
+        SinglyLinkedList list = new SinglyLinkedList();
+        for (int i = 1; i < 10; i++) {
+            list.add(i * 10);
+        }
+
+        list.printNodes();
+
+        list.deleteNodeById(10); // delete element in the beginning of the list
+        list.printNodes();
+
+        list.deleteNodeById(50); // delete element in the middle of the list
+        list.printNodes();
+
+        list.deleteNodeById(90); // delete element in the end of the list
+        list.printNodes();
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
