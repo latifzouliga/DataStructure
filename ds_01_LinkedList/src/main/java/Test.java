@@ -22,7 +22,6 @@ public class Test {
         myList.printNodes();
 
         // test deleteNodeById method
-
         SinglyLinkedList list = new SinglyLinkedList();
         for (int i = 1; i < 10; i++) {
             list.add(i * 10);
@@ -38,6 +37,14 @@ public class Test {
 
         list.deleteNodeById(90); // delete element in the end of the list
         list.printNodes();
+
+        System.out.println("------- test  an empty list ----------");
+        SinglyLinkedList emptyList = new SinglyLinkedList();
+        emptyList.printNodes();
+
+        emptyList.deleteNodeById(1000);
+
+
 
     }
 }

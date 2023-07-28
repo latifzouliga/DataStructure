@@ -61,12 +61,18 @@ public class SinglyLinkedList {
                 size--;
 
             }
+            // iterate
+            // move forward on the element of the list until the current is null
             prev = current;
             current = current.next;
         }
     }
 
     void printNodes() {
+
+        if (size == 0) {
+            System.out.println("list is empty");
+        }
         Node current = head;
         while (current != null) {
 
