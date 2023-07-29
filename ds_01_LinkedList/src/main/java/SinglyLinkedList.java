@@ -4,6 +4,10 @@ public class SinglyLinkedList {
     Node tail;
     int size;
 
+    Node prev;
+    Node current;
+    int index;
+
     boolean isEmpty() {
         return head == null;
     }
@@ -34,8 +38,8 @@ public class SinglyLinkedList {
         }
 
         // assign  prev and current with head
-        Node prev = head;
-        Node current = head;
+        prev = head;
+        current = head;
 
         while (current != null) {
             if (current.id == value) {
@@ -73,7 +77,7 @@ public class SinglyLinkedList {
         if (size == 0) {
             System.out.println("list is empty");
         }
-        Node current = head;
+        current = head;
         while (current != null) {
 
             if (current.next == null) System.out.println(current.id + " => null");
@@ -84,4 +88,35 @@ public class SinglyLinkedList {
         }
 
     }
+
+    int indexOf(int element){
+
+        if (isEmpty()) return -1;
+
+        current = head;
+        index = 0;
+
+        while (current != null){
+            if (current.id == element){
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1;
+    }
+
+    int findByIndex(int index){
+
+        current = head;
+        this.index = 0;
+
+        while (current != null){
+            if (this.index == index) return current.id;
+            this.index++;
+            current = current.next;
+        }
+        return -1;
+    }
+
 }
