@@ -29,11 +29,39 @@ public class SinglyLinkedList {
         }
     }
 
+    void addFirst(int data){
+        Node node = new Node(data);
+
+        if (isEmpty()){
+            head = tail = node;
+            size++;
+        }else {
+
+            node.next = head;
+            head = node;
+            size++;
+        }
+    }
+
+    void addLast(int data){
+        Node node = new Node(data);
+
+        if (isEmpty()){
+            head = tail = node;
+            size++;
+        }else {
+            tail.next = node;
+            tail = node;
+            size++;
+        }
+
+    }
+
     void deleteNodeById(int value) {
 
         // check if the list is empty
         if (isEmpty()) {
-            System.out.println("list is empty");
+            System.out.println(" list is empty");
 
         }
 
@@ -75,17 +103,19 @@ public class SinglyLinkedList {
     void printNodes() {
 
         if (size == 0) {
-            System.out.println("list is empty");
+            System.out.println("[]");
         }
         current = head;
+        System.out.print("[");
         while (current != null) {
 
-            if (current.next == null) System.out.println(current.id + " => null");
+            if (current.next == null) System.out.print(current.id + " ,null");
             else {
-                System.out.print(current.id + " => ");
+                System.out.print(current.id + " ,");
             }
             current = current.next;
         }
+        System.out.print("]");
 
     }
 

@@ -34,10 +34,10 @@ public class Test {
         System.out.println("\n");
         System.out.println("--------- Find the index of an element -----");
 
-        System.out.println("list.indexOf(10) = " + list.indexOf(10));  // 0
-        System.out.println("list.indexOf(50) = " + list.indexOf(50));  // 4
-        System.out.println("list.indexOf(90) = " + list.indexOf(90));  // 8
-        System.out.println("list.indexOf(122) = " + list.indexOf(122)); // -1
+        System.out.println("index of 10 = " + list.indexOf(10));  // 0
+        System.out.println("index of 50 = " + list.indexOf(50));  // 4
+        System.out.println("index of 90 = " + list.indexOf(90));  // 8
+        System.out.println("index of 122 = " + list.indexOf(122)); // -1
 
         System.out.println("\n");
         System.out.println("--------- Find element by there index -----");
@@ -61,6 +61,21 @@ public class Test {
         System.out.println("delete element 90");
         list.deleteNodeById(90); // delete element in the end of the list
         list.printNodes();
+
+        System.out.println("\n");
+        System.out.println("Add an element to the beginning of the list");
+        list.addFirst(100);
+        list.addFirst(999);
+        list.printNodes();
+
+        System.out.println("\n");
+        System.out.println("Add an element to the end of the list");
+        list.addLast(-22);
+        list.addLast(7);
+        list.printNodes();
+
+        System.out.println("\n");
+        System.out.println("list size = " + list.size);
 
         System.out.println("\n");
         System.out.println("------- test  an empty list ----------");
