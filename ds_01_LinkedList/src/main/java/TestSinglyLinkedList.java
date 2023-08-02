@@ -1,6 +1,4 @@
-import java.util.Collections;
-
-public class Test {
+public class TestSinglyLinkedList {
 
 
     public static void main(String[] args) {
@@ -86,7 +84,11 @@ public class Test {
 
         System.out.println(list.indexOf(40));
 
+        list.printNodes();
+        System.out.println("get Kth element from the last = " + list.getKthFromLast(6));
 
+        list.removeKthNode(6);
+        list.printNodes();
 
     }
 }

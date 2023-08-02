@@ -29,13 +29,13 @@ public class SinglyLinkedList {
         }
     }
 
-    void addFirst(int data){
+    void addFirst(int data) {
         Node node = new Node(data);
 
-        if (isEmpty()){
+        if (isEmpty()) {
             head = tail = node;
             size++;
-        }else {
+        } else {
 
             node.next = head;
             head = node;
@@ -43,13 +43,13 @@ public class SinglyLinkedList {
         }
     }
 
-    void addLast(int data){
+    void addLast(int data) {
         Node node = new Node(data);
 
-        if (isEmpty()){
+        if (isEmpty()) {
             head = tail = node;
             size++;
-        }else {
+        } else {
             tail.next = node;
             tail = node;
             size++;
@@ -115,19 +115,19 @@ public class SinglyLinkedList {
             }
             current = current.next;
         }
-        System.out.print("]");
+        System.out.println("]");
 
     }
 
-    int indexOf(int element){
+    int indexOf(int element) {
 
         if (isEmpty()) return -1;
 
         current = head;
         index = 0;
 
-        while (current != null){
-            if (current.id == element){
+        while (current != null) {
+            if (current.id == element) {
                 return index;
             }
             index++;
@@ -136,12 +136,12 @@ public class SinglyLinkedList {
         return -1;
     }
 
-    int findByIndex(int index){
+    int findByIndex(int index) {
 
         current = head;
         this.index = 0;
 
-        while (current != null){
+        while (current != null) {
             if (this.index == index) return current.id;
             this.index++;
             current = current.next;
@@ -149,4 +149,50 @@ public class SinglyLinkedList {
         return -1;
     }
 
+    public int getKthFromLast(int k) {
+
+        Node p1 = head;
+        Node p2 = head;
+
+        for (int i = 1; i < k; i++) {
+            p2 = p2.next;
+        }
+
+        while (p2.next != null){
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return p1.id;
+    }
+
+    public void removeKthNode(int k){
+        Node p1 = head;
+        Node p2 = head;
+        prev = head;
+
+        for (int i = 1; i < k; i++) {
+            p2 = p2.next;
+        }
+
+        while (p2.next != null){
+            prev = p1;
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        prev.next = p1.next;
+        p1.next = null;
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
