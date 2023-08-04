@@ -85,10 +85,16 @@ public class TestSinglyLinkedList {
         System.out.println(list.indexOf(40));
 
         list.printNodes();
+        System.out.println(list.size);
         System.out.println("get Kth element from the last = " + list.getKthFromLast(6));
 
-        list.removeKthNode(6);
+
+        list.removeKthNode(2);
         list.printNodes();
+        System.out.println(list.size);
+
+
+
 
     }
 }

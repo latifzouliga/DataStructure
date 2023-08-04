@@ -8,7 +8,7 @@ public class TwoSum {
 
 
         int[] array = {2, 10, 7, 9, 5};
-        int target = 15;
+        int target = 12;
 
         // brute force
         int[] result = toSumBruteForce(array, target);

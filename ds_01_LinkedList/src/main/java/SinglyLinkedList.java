@@ -151,6 +151,13 @@ public class SinglyLinkedList {
 
     public int getKthFromLast(int k) {
 
+        // Get the Kth item from the end of the linkedList
+        // 1. linked list size is unknown
+        // 2. find the Kth element from the end with on pass
+        // 3. items already exists in the linked list
+        // input: [1, 2,  3, 4]  k = 3
+        // output: 2
+
         Node p1 = head;
         Node p2 = head;
 
@@ -158,14 +165,18 @@ public class SinglyLinkedList {
             p2 = p2.next;
         }
 
-        while (p2.next != null){
+        while (p2.next != null) {
             p1 = p1.next;
             p2 = p2.next;
         }
         return p1.id;
     }
 
-    public void removeKthNode(int k){
+    public void removeKthNode(int k) {
+
+        if (k > size) {
+            throw new RuntimeException(k + " is greater then the list size");
+        }
         Node p1 = head;
         Node p2 = head;
         prev = head;
@@ -174,16 +185,57 @@ public class SinglyLinkedList {
             p2 = p2.next;
         }
 
-        while (p2.next != null){
+        while (p2.next != null) {
             prev = p1;
             p1 = p1.next;
             p2 = p2.next;
         }
 
-        prev.next = p1.next;
-        p1.next = null;
-
+        if (p1 == head) {
+            head = p1.next;
+            p1.next = null;
+            size--;
+        } else if (p1 == tail) {
+            tail = prev;
+            prev.next = null;
+            size--;
+        } else {
+            prev.next = p1.next;
+            p1.next = null;
+            size--;
+        }
     }
+
+//    public void removeKthNode2(int k) {
+//
+//        Node p1 = head;
+//        Node p2 = head;
+//
+//        for (int i = 0; i < k; i++) {
+//            p2 = p2.next;
+//        }
+//
+//        while (p2.next != null) {
+//            p1 = p1.next;
+//            p2 = p2.next;
+//
+//        }
+//
+//        if (p1.next == head) {
+//            head = p1.next.next;
+//            p1.next.next = null;
+//            size--;
+//        } else if (p1 == tail) {
+//            tail = p1.next;
+//            p1.next.next = null;
+//            size--;
+//        } else {
+//            p1.next = p1.next.next;
+//            p1.next = null;
+//            size--;
+//        }
+//    }
+
 
 }
 
