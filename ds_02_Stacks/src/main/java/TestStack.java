@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class TestStack {
 
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class TestStack {
         }
 
         myStack.printStack();
+        System.out.println("myStack.peek() = " + myStack.peek());
         System.out.println();
 
         MyStack<String> stackOfStrings = new MyStack<>();
@@ -32,6 +35,8 @@ public class TestStack {
         System.out.println("stackOfStrings.size = " + stackOfStrings.size);
 
         System.out.println();
+
+
 
 
     }
