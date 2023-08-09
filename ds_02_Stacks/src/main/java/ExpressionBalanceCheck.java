@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 public class ExpressionBalanceCheck {
 
@@ -13,14 +13,17 @@ public class ExpressionBalanceCheck {
 
         MyStack<Character> stack = new MyStack<>();
 
-
-
         for (int i = 0; i < expression.length(); i++) {
             char ch = expression.charAt(i);
 
-            if (ch != '(' && ch != '[' && ch != '{' && ch != ')' && ch != ']' && ch != '}') {
-                continue;
-            }
+            List<Character> characters = new ArrayList<>();
+            characters.addAll(Arrays.asList('(', ')', '{', '}', '[', ']'));
+
+            if (!characters.contains(ch)) continue;;
+
+//            if (ch != '(' && ch != '[' && ch != '{' && ch != ')' && ch != ']' && ch != '}') {
+//                continue;
+//            }
 
             if (ch == '(' || ch == '[' || ch == '{') {
                 stack.push(ch);
