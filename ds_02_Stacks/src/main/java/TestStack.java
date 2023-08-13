@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.util.*;
 
 public class TestStack {
 
@@ -21,7 +21,7 @@ public class TestStack {
         }
 
         myStack.printStack();
-        System.out.println("myStack.peek() = " + myStack.peek());
+       // System.out.println("myStack.peek() = " + myStack.peek());
         System.out.println();
 
         MyStack<String> stackOfStrings = new MyStack<>();
@@ -35,6 +35,22 @@ public class TestStack {
         System.out.println("stackOfStrings.size = " + stackOfStrings.size);
 
         System.out.println();
+
+        String str = "Latif";
+        char[] ch = str.toCharArray();
+        MyStack<Character> stack = new MyStack<>();
+        for (char each : ch) {
+            stack.push(each);
+        }
+        //Deque<String> stack = new LinkedList<>(Arrays.asList(str.split("")));
+        System.out.println(stack);
+        int s = stack.size;
+        String result = "";
+        for (int i = 0; i < s; i++) {
+           result += stack.pop();
+        }
+        System.out.println(result);
+
 
 
 
