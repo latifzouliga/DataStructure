@@ -38,7 +38,7 @@ public class TestStack {
 
         String str = "Latif";
         char[] ch = str.toCharArray();
-        MyStack<Character> stack = new MyStack<>();
+       MyStack<Character> stack = new MyStack<>();
         for (char each : ch) {
             stack.push(each);
         }

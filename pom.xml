@@ -12,6 +12,7 @@
         <module>ds_01_LinkedList</module>
         <module>collectionReview</module>
         <module>ds_02_Stacks</module>
+        <module>ds_03_Queues</module>
     </modules>
 
     <properties>

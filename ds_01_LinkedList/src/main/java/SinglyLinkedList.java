@@ -1,5 +1,6 @@
 public class SinglyLinkedList {
 
+    // TODO: Update this class
     Node head;
     Node tail;
     int size;
@@ -206,6 +207,8 @@ public class SinglyLinkedList {
         }
     }
 
+    /**
+
 //    public void removeKthNode2(int k) {
 //
 //        Node p1 = head;
@@ -236,6 +239,7 @@ public class SinglyLinkedList {
 //        }
 //    }
 
+*/
 
 }
 
