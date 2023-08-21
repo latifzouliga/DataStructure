@@ -15,26 +15,13 @@ public class Tasks {
 
         System.out.println("the solution with my MyQueue");
         MyQueue<Integer> myQueue = new MyQueue<>() {{
-            enqueue(10);
-            enqueue(20);
-            enqueue(30);
-            enqueue(40);
-            enqueue(50);
+            enqueue(100);
+            enqueue(200);
+            enqueue(300);
+            enqueue(400);
+            enqueue(500);
         }};
-
-        Stack<Integer> myStack = new Stack();
-        int k = 4;
-        for (int i = 0; i < k; i++) {
-            myStack.push(myQueue.dequeue());
-        }
-
-        for (int i = 0; i < k; i++) {
-            myQueue.enqueue(myStack.pop());
-        }
-
-        myStack.push(myQueue.dequeue());
-        myQueue.enqueue(myStack.pop());
-        System.out.println(myQueue);
+        System.out.println("reverseFirstKMyQueue = " + reverseFirstKMyQueue(myQueue, 3));
 
 
         System.out.println("the solution using Deque");
@@ -45,22 +32,66 @@ public class Tasks {
             add(40);
             add(50);
         }};
+        System.out.println("reverseFirstKDeque = " + reverseFirstKDeque(deque, 3));
 
+        MyQueue<Integer> queue = new MyQueue<>(){{
+            enqueue(1);
+            enqueue(2);
+            enqueue(3);
+            enqueue(4);
+            enqueue(5);
+        }};
+        System.out.println("reverseFirstK = " + reverseFirstK(queue, 3));
+
+
+    }
+
+    private static MyQueue<Integer> reverseFirstKMyQueue(MyQueue<Integer> myQueue, int k) {
+        // TODO: REFACTOR reverse first k
+        Stack<Integer> myStack = new Stack();
+        for (int i = 0; i < k; i++) {
+            myStack.push(myQueue.dequeue());
+        }
+
+        for (int i = 0; i < k; i++) {
+            myQueue.enqueue(myStack.pop());
+        }
+
+        myStack.push(myQueue.dequeue());
+        myQueue.enqueue(myStack.pop());
+        return myQueue;
+    }
+
+    private static Deque<Integer> reverseFirstKDeque(Deque<Integer> deque, int k) {
+        // TODO: REFACTOR reverse first k
         Deque<Integer> stackQueue = new LinkedList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < k; i++) {
             stackQueue.push(deque.pop()); // stackQueue is now a stack
         }
         stackQueue.add(deque.pop());     // stackQueue is now a queue
-        System.out.println(stackQueue);
-
-        int reduce = IntStream.range(1, 6).reduce(1, (a, b) -> a * b);
-        System.out.println(reduce);
+        return stackQueue;
+    }
 
 
+    public static MyQueue<Integer> reverseFirstK(MyQueue<Integer> queue, int k){
 
+        Stack<Integer> stack = new Stack<>();
 
+        // push first k element to stack
+        for (int i = 0; i < k; i++) {
+            stack.push(queue.dequeue());
+        }
 
+        // enqueue elements int queue
+        while (!stack.isEmpty()){
+            queue.enqueue(stack.pop());
+        }
 
+        // dequeue and enqueue size - elements
+        for (int i = 0; i < queue.size() -k; i++) {
+            queue.enqueue(queue.dequeue());
+        }
 
+        return queue;
     }
 }
