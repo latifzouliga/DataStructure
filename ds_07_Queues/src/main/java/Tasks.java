@@ -34,7 +34,7 @@ public class Tasks {
         }};
         System.out.println("reverseFirstKDeque = " + reverseFirstKDeque(deque, 3));
 
-        MyQueue<Integer> queue = new MyQueue<>(){{
+        MyQueue<Integer> queue = new MyQueue<>() {{
             enqueue(1);
             enqueue(2);
             enqueue(3);
@@ -43,12 +43,15 @@ public class Tasks {
         }};
         System.out.println("reverseFirstK = " + reverseFirstK(queue, 3));
 
+        // Given an array of Integers {10,6,8,20,4,9,5,17,42,47,29}
+
 
     }
 
     private static MyQueue<Integer> reverseFirstKMyQueue(MyQueue<Integer> myQueue, int k) {
         // TODO: REFACTOR reverse first k
         Stack<Integer> myStack = new Stack();
+
         for (int i = 0; i < k; i++) {
             myStack.push(myQueue.dequeue());
         }
@@ -58,22 +61,27 @@ public class Tasks {
         }
 
         myStack.push(myQueue.dequeue());
-        myQueue.enqueue(myStack.pop());
+
         return myQueue;
     }
 
     private static Deque<Integer> reverseFirstKDeque(Deque<Integer> deque, int k) {
-        // TODO: REFACTOR reverse first k
+
         Deque<Integer> stackQueue = new LinkedList<>();
         for (int i = 0; i < k; i++) {
             stackQueue.push(deque.pop()); // stackQueue is now a stack
         }
-        stackQueue.add(deque.pop());     // stackQueue is now a queue
+
+        // stackQueue is now a queue
+        while (!deque.isEmpty()) {
+            stackQueue.add(deque.pop());
+        }
+
         return stackQueue;
     }
 
 
-    public static MyQueue<Integer> reverseFirstK(MyQueue<Integer> queue, int k){
+    public static MyQueue<Integer> reverseFirstK(MyQueue<Integer> queue, int k) {
 
         Stack<Integer> stack = new Stack<>();
 
@@ -83,12 +91,12 @@ public class Tasks {
         }
 
         // enqueue elements int queue
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             queue.enqueue(stack.pop());
         }
 
         // dequeue and enqueue size - elements
-        for (int i = 0; i < queue.size() -k; i++) {
+        for (int i = 0; i < queue.size() - k; i++) {
             queue.enqueue(queue.dequeue());
         }
 

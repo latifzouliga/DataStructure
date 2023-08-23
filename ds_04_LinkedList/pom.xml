@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ds_01_LinkedList</artifactId>
+    <artifactId>ds_04_LinkedList</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
