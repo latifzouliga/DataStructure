@@ -3,11 +3,11 @@ public class TreeApp {
 
         MyTree tree = new MyTree();
 
-        int[] numbers = {10, 5, 12, 3, 6, 11, 13, 2,};
+        //int[] numbers = {10, 5, 12, 3, 6, 11, 13, 2,};
         //int[] numbers = {10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
-        //int[] numbers = {15, 18, 11, 7,4};
+        int[] numbers = {15, 18, 11, 7,4};
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 5; i++) {
             tree.insert(numbers[i]);
         }
 
@@ -47,7 +47,10 @@ public class TreeApp {
 
 //        System.out.println("Balance factor is: " + tree.balanceFactor(tree.root));
 
-        System.out.println(tree.depthOfNodes(tree.root,1));
+        System.out.println("Sum of node Depths is: " + tree.depthOfNodes(tree.root, 0));
+        System.out.println("Sum of node values is : "+ tree.sumOfNodes(tree.root, 0));
+
+
 
     }
 }

@@ -232,11 +232,19 @@ public class MyTree {
     public int depthOfNodes(TNode root, int a) {
 
         if (root == null) return 0;
-
+        //System.out.println(root.value);
         return a + (depthOfNodes(root.leftChild, a + 1)) + (depthOfNodes(root.rightChild, a + 1));
-
-
     }
+
+
+    // find the node values
+    //TODO: something is wrong
+    public int sumOfNodes(TNode node, int sum) {
+        if (node == null) return 0;
+        return sum + sumOfNodes(node.leftChild,  node.value) + sumOfNodes(node.rightChild,  node.value);
+    }
+
+
 
 
 }
