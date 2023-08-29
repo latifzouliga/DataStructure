@@ -36,7 +36,7 @@ public class MyTree {
 
     }
 
-    public void insetAll(int... values){
+    public void insetAll(int... values) {
         for (int value : values) {
             insert(value);
         }
@@ -246,11 +246,21 @@ public class MyTree {
     //TODO: something is wrong
     public int sumOfNodes(TNode node, int sum) {
         if (node == null) return 0;
-        return sum + sumOfNodes(node.leftChild,  node.value) + sumOfNodes(node.rightChild,  node.value);
+        return sum + sumOfNodes(node.leftChild, node.value) + sumOfNodes(node.rightChild, node.value);
     }
 
-
-
+    public int sumOfNodesLevelOrder(TNode node) {
+        int sum = 0;
+        Queue<TNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            TNode toVisit = queue.poll();
+            sum += toVisit.value;
+            if (toVisit.leftChild != null) queue.add(toVisit.leftChild);
+            if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
+        }
+        return sum;
+    }
 
 
 }

@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class TreeApp {
     public static void main(String[] args) {
 
@@ -51,10 +54,10 @@ public class TreeApp {
 
 //        System.out.println("Sum of node values is : "+ tree.sumOfNodes(tree.root, 0));
 
-        tree.insetAll(20,12,3,45,11);
+
+        tree.insetAll(10, 20, 12, 40, 3);
         VisualizeTree.printTree(tree.root, null, false);
-
-
+        System.out.println(tree.sumOfNodesLevelOrder(tree.root));
 
 
     }
