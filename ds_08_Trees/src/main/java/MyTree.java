@@ -36,6 +36,11 @@ public class MyTree {
 
     }
 
+    public void insetAll(int... values){
+        for (int value : values) {
+            insert(value);
+        }
+    }
 
     //==================================== Depth first ===============================
     // PreOrder Traversal of the tree

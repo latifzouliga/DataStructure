@@ -5,13 +5,13 @@ public class TreeApp {
 
         //int[] numbers = {10, 5, 12, 3, 6, 11, 13, 2,};
         //int[] numbers = {10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
-        int[] numbers = {15, 18, 11, 7,4};
+//        int[] numbers = {15, 18, 11, 7,4};
+//
+//        for (int i = 0; i < 5; i++) {
+//            tree.insert(numbers[i]);
+//        }
 
-        for (int i = 0; i < 5; i++) {
-            tree.insert(numbers[i]);
-        }
-
-        VisualizeTree.printTree(tree.root, null, false);
+//        VisualizeTree.printTree(tree.root, null, false);
 
 //        System.out.println("Pr order");
 //        tree.preOrderTraversal(tree.root);
@@ -49,7 +49,11 @@ public class TreeApp {
 
 //         System.out.println("Sum of node Depths is: " + tree.depthOfNodes(tree.root, 0));
 
-        System.out.println("Sum of node values is : "+ tree.sumOfNodes(tree.root, 0));
+//        System.out.println("Sum of node values is : "+ tree.sumOfNodes(tree.root, 0));
+
+        tree.insetAll(20,12,3,45,11);
+        VisualizeTree.printTree(tree.root, null, false);
+
 
 
 
