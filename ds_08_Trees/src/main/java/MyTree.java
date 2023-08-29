@@ -107,34 +107,52 @@ public class MyTree {
 
     }
 
+
     public void printLeavesRecursiveInOrder(TNode root) {
         if (root == null) return;
 
         printLeavesRecursiveInOrder(root.leftChild);
-        if (root.leftChild == null && root.rightChild == null) System.out.println(root.value);
+        //if (root.leftChild == null && root.rightChild == null) System.out.println(root.value);
+        if (isLeafNode(root)) System.out.println(root.value);
         printLeavesRecursiveInOrder(root.rightChild);
     }
 
+
     // Task 1: Implement finding an integer value in a BST (Binary Search Tree)
+
+    /**
+     * public boolean contains(int value) {
+     * if (root == null) return false;
+     * <p>
+     * Queue<TNode> queue = new LinkedList<>();
+     * queue.add(root);
+     * <p>
+     * while (!queue.isEmpty()) {
+     * TNode toVisit = queue.poll();
+     * if (toVisit.value == value) {
+     * return true;
+     * }
+     * if (toVisit.leftChild != null) queue.add(toVisit.leftChild);
+     * if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
+     * }
+     * return false;
+     * }
+     */
     public boolean contains(int value) {
         if (root == null) return false;
 
-        Queue<TNode> queue = new LinkedList<>();
-        queue.add(root);
-
-        while (!queue.isEmpty()) {
-            TNode toVisit = queue.poll();
-            if (toVisit.value == value) {
-                return true;
-            }
-            if (toVisit.leftChild != null) queue.add(toVisit.leftChild);
-            if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
+        TNode current = root;
+        while (current != null) {
+            if (value < current.value) current = current.leftChild;
+            else if (value > current.value) current = current.rightChild;
+            else return true;
         }
         return false;
     }
 
+
     // Task 2: Implement a method that returns true if the node is a leaf in BST
-    public boolean isLeaf(int value) {
+    public boolean isLeafValue(int value) {
         if (root == null) return false;
 
         Queue<TNode> queue = new LinkedList<>();
@@ -154,8 +172,69 @@ public class MyTree {
     }
 
 
+    public boolean isLeafNode(TNode node) {
+        return node.leftChild == null && node.rightChild == null;
+    }
+
+
+    // Implement a method that counts the leaves
+    public int countLeaves(TNode root) {
+
+        int count = 0;
+        if (root == null) return 0;
+        Queue<TNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TNode toVisit = queue.poll();
+            if (toVisit.leftChild == null && toVisit.rightChild == null) {
+                count++;
+            }
+            if (toVisit.leftChild != null) queue.add(toVisit.leftChild);
+            if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
+        }
+        return count;
+    }
+
+    public int countLeavesRecur(TNode root) {
+        if (root == null) return 0;
+        if (isLeafNode(root)) return 1;
+        return countLeaves(root.leftChild) + countLeaves(root.rightChild);
+    }
+
+    // implement a method that returns the sum of leaf values
+    public int sumLeafValues(TNode root) {
+        if (root == null) return 0;
+        if (isLeafNode(root)) return root.value;
+        return sumLeafValues(root.leftChild) + sumLeafValues(root.rightChild);
+    }
+
+    // the height of tree can be calculated by calculating the edges instead of nodes
+
+    // implement a method that returns the height of node in tree
+    public int height(TNode root) {
+        // in the root has no children it will return 0. because the height is 0
+        // if the root is null it will return -1.
+        if (root == null) return -1;
+        if (isLeafNode(root)) return 0;
+
+        // since the leaf nodes return -1 and the root node with no children return 0 we need to add 1 to handle the edge case
+        return 1 + Math.max(height(root.leftChild), height(root.rightChild));
+    }
+
+    public int balanceFactor(TNode root){
+        if (root == null) return -1;
+        if (isLeafNode(root)) return 0;
+        return Math.abs(balanceFactor(root.leftChild) - balanceFactor(root.rightChild));
+    }
+
+
+
 
 }
+
+
+
+
 
 
 
