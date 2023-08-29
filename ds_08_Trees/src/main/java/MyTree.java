@@ -151,7 +151,7 @@ public class MyTree {
     }
 
 
-    // Task 2: Implement a method that returns true if the node is a leaf in BST
+    // Task 2: Implement a method that returns true if the value of node is a leaf in BST
     public boolean isLeafValue(int value) {
         if (root == null) return false;
 
@@ -171,7 +171,7 @@ public class MyTree {
         return false;
     }
 
-
+    // Task 2: Implement a method that returns true if the node is a leaf in BST
     public boolean isLeafNode(TNode node) {
         return node.leftChild == null && node.rightChild == null;
     }
@@ -221,13 +221,22 @@ public class MyTree {
         return 1 + Math.max(height(root.leftChild), height(root.rightChild));
     }
 
-    public int balanceFactor(TNode root){
+    public int balanceFactor(TNode root) {
         if (root == null) return -1;
         if (isLeafNode(root)) return 0;
         return Math.abs(balanceFactor(root.leftChild) - balanceFactor(root.rightChild));
     }
 
 
+    // a of node depth
+    public int depthOfNodes(TNode root, int a) {
+
+        if (root == null) return 0;
+
+        return a + (depthOfNodes(root.leftChild, a + 1)) + (depthOfNodes(root.rightChild, a + 1));
+
+
+    }
 
 
 }
