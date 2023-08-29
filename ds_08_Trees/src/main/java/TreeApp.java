@@ -47,7 +47,8 @@ public class TreeApp {
 
 //        System.out.println("Balance factor is: " + tree.balanceFactor(tree.root));
 
-        System.out.println("Sum of node Depths is: " + tree.depthOfNodes(tree.root, 0));
+//         System.out.println("Sum of node Depths is: " + tree.depthOfNodes(tree.root, 0));
+
         System.out.println("Sum of node values is : "+ tree.sumOfNodes(tree.root, 0));
 
 
