@@ -1,9 +1,11 @@
 import java.util.*;
+import java.util.function.Consumer;
 
 public class MyTree {
 
     TNode root;
 
+    List<Integer> list = new ArrayList<>();
     public MyTree() {
     }
 
@@ -73,6 +75,7 @@ public class MyTree {
         postOrderTraversal(root.leftChild);  // branch and finish left subtree
         postOrderTraversal(root.rightChild); // branch and finish right subtree
         System.out.println(root.value);      // visit root
+        list.add(root.value);
 
     }
 
@@ -85,7 +88,6 @@ public class MyTree {
         queue.add(root);
         while (!queue.isEmpty()) {
             TNode toVisit = queue.poll();
-            //if (toVisit.leftChild == null)  System.out.println(toVisit.value); print leaves only
             System.out.println(toVisit.value);
             if (toVisit.leftChild != null) queue.add(toVisit.leftChild);
             if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
@@ -237,7 +239,6 @@ public class MyTree {
     public int depthOfNodes(TNode root, int a) {
 
         if (root == null) return 0;
-        //System.out.println(root.value);
         return a + (depthOfNodes(root.leftChild, a + 1)) + (depthOfNodes(root.rightChild, a + 1));
     }
 
@@ -260,6 +261,32 @@ public class MyTree {
             if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
         }
         return sum;
+    }
+
+    public void print(TNode root, String traversalType){
+
+        switch (traversalType){
+            case "level order":
+            case "level":
+                levelOrderTraversal(root);
+                break;
+            case "in order":
+            case "in":
+                inOrderTraversal(root);
+                break;
+            case "pre order":
+            case "pre":
+                preOrderTraversal(root);
+                break;
+            case "post order":
+            case "post":
+                postOrderTraversal(root);
+                break;
+            default:
+                System.out.println("Please choose the right traversal:\n" +
+                        "'in order' OR 'in', 'pre order' OR 'pre', 'post order' OR 'post', 'level order' OR 'level'" );
+        }
+
     }
 
 
