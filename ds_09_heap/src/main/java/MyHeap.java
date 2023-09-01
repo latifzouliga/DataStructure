@@ -117,6 +117,29 @@ public class MyHeap {
         System.out.println(list);
     }
 
+    public int[] sort(){
+        int[] sorted = new int[size];
+        int length = size;
+        for (int i = 0; i < length; i++) {
+            sorted[i] = remove();
+        }
+        return sorted;
+    }
+
+    //================================ tasks =============================
+
+    // find the Kth largest element
+
+    public int largestKthElement(int Kth){
+
+        for (int i = 0; i < Kth -1; i++) {
+            remove();
+        }
+        return items[0];
+    }
+
+
+
 
 }
 

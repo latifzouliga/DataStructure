@@ -22,11 +22,20 @@ public class HeapApp {
         heap.printHeap();
         heap.insert(130);
         heap.printHeap();
-        heap.remove();
-        heap.printHeap();
-        heap.remove();
-        heap.printHeap();
+        // heap.remove();
+        //heap.printHeap();
+        //heap.remove();
+        //heap.printHeap();
+//        System.out.println(Arrays.toString(heap.sort()));
+//        heap.printHeap();
+//
+//        int[] array = {15, 21, 12, 16, 30, 1};
+//        for (int j : array) {
+//            heap.insert(j);
+//        }
+//        heap.printHeap();
 
+        System.out.println(heap.largestKthElement(2));
 
 
     }
