@@ -1,5 +1,8 @@
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class HeapApp {
 
@@ -14,6 +17,11 @@ public class HeapApp {
         heap.insert(81);
 
         heap.printHeap();
+
+        System.out.println(heap.remove());
+        heap.printHeap();
+
+
 
     }
 }
