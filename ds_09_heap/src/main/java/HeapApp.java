@@ -20,6 +20,12 @@ public class HeapApp {
 
         System.out.println(heap.remove());
         heap.printHeap();
+        heap.insert(130);
+        heap.printHeap();
+        heap.remove();
+        heap.printHeap();
+        heap.remove();
+        heap.printHeap();
 
 
 
