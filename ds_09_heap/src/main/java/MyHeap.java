@@ -31,7 +31,7 @@ public class MyHeap {
     public void bubbleUp() {
         // calculate starting point (starting index)
         int index = size - 1;
-        while (index > 0 && items[index] > items[parentIndex(index)]) {
+        while (index >= 0 && items[index] > items[parentIndex(index)]) {
             swap(index, parentIndex(index));
             // assign index with the parent index
             index = parentIndex(index); // similar to current = current.next
@@ -40,7 +40,6 @@ public class MyHeap {
     }
 
     public int remove() {
-
         if (size == 0) throw new NoSuchElementException();
         else {
             int result = items[0];
@@ -57,7 +56,8 @@ public class MyHeap {
         int largerChildIndex;
         while (index <= size && !isValidParent(index)) {
             largerChildIndex = largerChildIndex(index);
-            swap(index, leftChildIndex(index));
+            swap(index, largerChildIndex);
+
             index = largerChildIndex;
             bubbleUp();
         }
@@ -75,11 +75,11 @@ public class MyHeap {
     }
 
     public boolean hasLeftChild(int index) {
-        return leftChildIndex(index) <= size;
+        return leftChildIndex(index) < size;
     }
 
     public boolean hasRightChild(int index) {
-        return rightChildIndex(index) <= size;
+        return rightChildIndex(index) < size;
     }
 
     public int parentIndex(int index) {
@@ -98,8 +98,9 @@ public class MyHeap {
         if (!hasLeftChild(index)) return index;
         else if (!hasRightChild(index)) {
             return leftChildIndex(index);
+        }else {
+            return items[leftChildIndex(index)] > items[rightChildIndex(index)] ? leftChildIndex(index) : rightChildIndex(index);
         }
-        return items[leftChildIndex(index)] > items[rightChildIndex(index)] ? leftChildIndex(index) : rightChildIndex(index);
 
     }
 
@@ -122,6 +123,7 @@ public class MyHeap {
         int length = size;
         for (int i = 0; i < length; i++) {
             sorted[i] = remove();
+
         }
         return sorted;
     }
@@ -130,13 +132,18 @@ public class MyHeap {
 
     // find the Kth largest element
 
+
     public int largestKthElement(int Kth){
 
+        int removed = 0;
         for (int i = 0; i < Kth -1; i++) {
-            remove();
+            removed = remove();
+            if (removed == remove()) i--;
         }
         return items[0];
     }
+
+
 
 
 
