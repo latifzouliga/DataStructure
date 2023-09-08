@@ -34,6 +34,7 @@ public class TernarySearch {
         return ternarySearchRecursive(array, data, 0, array.length - 1);
     }
 
+    // log3n
     public static int ternarySearchRecursive(int[] array, int data, int left, int right) {
         if (right < left) return -1;
         int partition = (right - left) / 3;

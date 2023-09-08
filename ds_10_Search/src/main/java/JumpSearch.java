@@ -8,6 +8,12 @@ public class JumpSearch {
 
     }
 
+    // it is kinda improvement to binary search
+    // it is like linear search but with jumping with a fixed steps and comparing the data with the last element in the jump
+    // calculating the block size by taking the square root of the data size
+    // if the last element in the block is greater than the data, then we do linear search from the beginning if the block
+    // time complexity: O(sqr(n))
+    // Space complexity: O(1)
     public static int jumpSearch(int[] array, int data){
         int blockSize = (int) Math.sqrt(array.length);
         int start = 0;

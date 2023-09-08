@@ -1,3 +1,6 @@
+import java.util.Random;
+import java.util.stream.Stream;
+
 public class BinarySearch {
 
     public static void main(String[] args) {
@@ -14,30 +17,22 @@ public class BinarySearch {
     }
 
 
-    // We must apply binary search algorithm to sorted arrays only
-    // In Binary search, the array will be divided into to parts left and right
+    // We must apply binary search algorithm  sorted arrays only
+    // In Binary search, the array will be divided into to parts left and right on each iteration
     // if the value we are looking for is less the left, we branch to right else, we branch to right
     // time complexity: O(log n)
     // space complexity: O(1)
     public static int binarySearchIterative(int[] array, int data) {
 
-        long start = System.currentTimeMillis();
-        int numOfExecutions = 0;
         int left = 0;
         int right = array.length - 1;
 
         while (left <= right) {
             int middle = (left + right) / 2;  // calculate the middle value
-
             if (array[middle] == data) return middle;
             if (data < array[middle]) right = middle - 1; // branch to left
             else left = middle + 1;                       // branch to right
-            numOfExecutions++;
-
         }
-        long end = System.currentTimeMillis();
-        System.out.println("time: "+(end -start));
-        System.out.println("num of exe: "+numOfExecutions);
         return -1;
     }
 
