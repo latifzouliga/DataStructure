@@ -13,10 +13,14 @@ public class InsertionSort {
         It is similar to Selection sort, because there are to parts of array; sorted part and unsorted part
         Picking up the first element next to the last element of sorted array and compare it with the last element of sorted part of array and insert it into it
         We start with comparing the first two element and sort them and
+        Performance is similar to bubble sort
+        Time complexity: O(n^2)
      */
 
     public static int[] insertionSort(int[] array) {
 
+        // starting from index one
+        // assuming that the index 0 is sorted and index one is not
         for (int i = 1; i < array.length; i++) {
 
             int toBeInserted = array[i]; // the last element in the sorted part of array
