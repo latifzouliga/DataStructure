@@ -17,7 +17,7 @@ public class SelectionSort {
         - The part which is sorted
         -  The remaining part which is unsorted
         In every Iteration the minimum is picked from unsorted part and moved to the sorted part
-        It is similar to bubble sort except that there is no swap
+        It is similar to bubble sort except that there is only one swap in each pass
      */
     public static int[] selectionSort(int[] array) {
 
