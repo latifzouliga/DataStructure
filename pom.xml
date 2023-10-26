@@ -17,6 +17,7 @@
         <module>ds_09_heap</module>
         <module>ds_10_Search</module>
         <module>ds_11_Sorting</module>
+        <module>Test</module>
     </modules>
 
     <properties>
