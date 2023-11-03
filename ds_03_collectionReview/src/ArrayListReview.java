@@ -10,6 +10,10 @@ public class ArrayListReview{
         students.add(new Student(2, "Sayed"));
         students.add(new Student(3, "Nick"));
         students.add(new Student(4, "Ronnie"));
+        students.add(new Student(1, "Jose"));
+        Student student1 = new Student(1, "Jose");
+        Student student2 = new Student(1, "Jose");
+
 
         // Iteration o ArrayList
         // 1: for loop
@@ -17,8 +21,8 @@ public class ArrayListReview{
             System.out.println(students.get(i));
         }
 
-        System.out.println();
-        System.out.println("------- Iterating list using Iterator -----------");
+
+        System.out.println("\n------- Iterating list using Iterator -----------");
 
         // Iteration using iterator
         Iterator<Student> it = students.iterator();
@@ -27,43 +31,58 @@ public class ArrayListReview{
             System.out.println(it.next());
         }
 
-        System.out.println("--------- Iterating list using ListIterator -----------");
+        System.out.println("\n--------- Iterating list using Iterator -----------");
         System.out.println("forward");
         Iterator iter = students.listIterator();
         while (iter.hasNext()) {
             System.out.println(iter.next());
         }
 
-        System.out.println();
-        System.out.println("backward");
+
+        System.out.println("\nbackward");
         while (((ListIterator<?>) iter).hasPrevious()) {
             System.out.println(((ListIterator<?>) iter).previous());
         }
 
-        System.out.println();
-        System.out.println("--------- for each loop ----------");
+        System.out.println("\n--------- Iterating list using ListIterator -----------");
+        ListIterator<Student> iterator = students.listIterator();
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("\n--------- Iterating list using ListIterator - Backward -----------");
+        while (iterator.hasPrevious()){
+            System.out.println(iterator.previous());
+        }
+
+        System.out.println("\n--------- for each loop ----------");
         for (Student student : students) {
             System.out.println(student);
         }
 
-        System.out.println();
-        System.out.println("---------- lambda ------------");
+
+        System.out.println("\n---------- lambda ------------");
         students.forEach(System.out::println);
 
-        System.out.println();
-        System.out.println("----------- sorting element in list by id -------------");
+
+        System.out.println("\n----------- sorting element in list by id DESC-------------");
         Collections.sort(students, new sortByIdDesc() );
-        students.forEach(s -> System.out.println(s));
+        //Collections.sort(students, Comparator.comparing(Student::getId).reversed() );
+        students.forEach(System.out::println);
 
-        System.out.println();
-        System.out.println("----------- sorting element in list by name ASC order -------------");
+
+        System.out.println("\n----------- sorting element in list by name ASC order -------------");
         Collections.sort(students, new sortByNameASC() );
-        students.forEach(s -> System.out.println(s));
+        //Collections.sort(students, Comparator.comparing(Student::getId) );
+        students.forEach(System.out::println);
 
-        System.out.println();
-        System.out.println("----------- sorting element in list by name DESC order -------------");
+        ;
+        System.out.println("\n----------- sorting element in list by name DESC order -------------");
         Collections.sort(students, new sortByNameDESC() );
-        students.forEach(s -> System.out.println(s));
+        //Collections.sort(students, Comparator.comparing(Student::getName) );
+        students.forEach(System.out::println);
+
 
     }
 

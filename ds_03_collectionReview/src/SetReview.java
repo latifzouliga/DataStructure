@@ -1,12 +1,10 @@
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SetReview {
 
     public static void main(String[] args) {
 
-        /** Wy do we need to implement hashCode and equals() methods? */
+        /* Wy do we need to implement hashCode and equals() methods? */
 
         // hashSet is using hashing mechanism and creating a hashCode to storing the element
         // if we don't override and implement hashCode() method, it is not going to be able to compare these two items (name and id)
@@ -31,6 +29,7 @@ public class SetReview {
         System.out.println(numSet.add(2));
 
 
+
         System.out.println();
         // Find the first repeating character
         // Example:
@@ -49,7 +48,21 @@ public class SetReview {
         Character r3 = firstRepeatingChar("Latif");
         System.out.println("The first repeating character is: " + r3);
 
+        String str1 = "I love Java and Java is good and also is hard";
+        System.out.println(repeating(str1));
 
+
+    }
+
+    private static List<String> repeating(String str){
+        Set<String> set = new LinkedHashSet<>();
+        List<String> result = new ArrayList<>();
+        for(String each : str.split(" ")){
+            if(!set.add(each)){
+                result.add(each);
+            }
+        }
+        return result;
     }
 
     private static Character firstRepeatingChar(String str) {

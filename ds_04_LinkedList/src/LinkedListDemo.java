@@ -19,9 +19,8 @@ public class LinkedListDemo {
         System.out.println("Node4 ID is: "+ node4.id + " and node4 address is: "+ node4.next);
 
         System.out.println("Iterate through linkedList");
-        Node current;
-        Node head = node1;
-        current = head;
+
+        Node current = node1; // node one is the head
         while (current != null){
             System.out.println(current.id);
             current = current.next;
