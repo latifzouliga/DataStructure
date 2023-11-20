@@ -1,3 +1,5 @@
+import java.util.function.Consumer;
+
 public class SinglyLinkedList {
 
     // TODO: Update this class
@@ -117,6 +119,17 @@ public class SinglyLinkedList {
             current = current.next;
         }
         System.out.println("]");
+
+    }
+
+    public void forEach(Consumer<Integer> consumer){
+
+        Node current = head;
+
+        while(current != null){
+            consumer.accept(current.id);
+            current = current.next;
+        }
 
     }
 

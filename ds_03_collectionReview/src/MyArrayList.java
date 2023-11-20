@@ -7,35 +7,35 @@ public class MyArrayList<T> {
     private Object[] array;
 
     public MyArrayList() {
-        array = new Object[10];
+        this.array = new Object[10];
     }
 
     public int size(){
-        return size;
+        return this.size;
     }
 
     public void add(T element) {
-        array[size++] = element;
-        if (array.length / 2 <= size) {
-            array = Arrays.copyOfRange(array, 0, size + 10);
+        this.array[this.size++] = element;
+        if (this.array.length / 2 <= size) {
+            this.array = Arrays.copyOfRange(this.array, 0, this.size + 10);
         }
     }
 
 
     public void remove() {
-        array[size--] = 0;
+        this.array[size--] = null;
     }
 
     public void forEach(Consumer<T> consumer) {
-        for (int i = 0; i < size; i++) {
-            T each = (T) array[i];
+        for (int i = 0; i < this.size; i++) {
+            T each = (T) this.array[i];
             consumer.accept(each);
         }
     }
 
     public int indexOf(T t){
-        for (int i = 0; i < size; i++) {
-            if (array[i].equals(t)) return i;
+        for (int i = 0; i < this.size; i++) {
+            if (this.array[i].equals(t)) return i;
         }
         return -1;
     }
@@ -44,8 +44,8 @@ public class MyArrayList<T> {
     @Override
     public String toString() {
         return Arrays.toString(
-                Arrays.stream(array)
-                        .limit(size)
+                Arrays.stream(this.array)
+                        .limit(this.size)
                         .toArray());
     }
 
@@ -65,6 +65,7 @@ public class MyArrayList<T> {
         nums.add(4);
         nums.add(20);
         nums.remove();
+        System.out.println(Arrays.toString(nums.array));
 
         //System.out.println(nums);
 

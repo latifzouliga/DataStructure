@@ -19,7 +19,10 @@ public class TestSinglyLinkedList {
 
         //System.out.println(myList.isEmpty());
 
-        myList.printNodes();
+        //myList.printNodes();
+        System.out.println("Begin forEach");
+        myList.forEach(System.out::println);
+        System.out.println("End forEach");
 
         // test deleteNodeById method
         SinglyLinkedList list = new SinglyLinkedList();
