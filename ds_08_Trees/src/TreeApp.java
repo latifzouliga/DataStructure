@@ -1,8 +1,13 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class TreeApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         MyTree tree = new MyTree();
 
@@ -63,7 +68,28 @@ public class TreeApp {
 //        tree.print(tree.root, "post");
 
 
+//        System.out.println("Enter a number");
+//        Scanner scanner = new Scanner(System.in);
+//        int num = scanner.nextInt();
+//        System.out.println(num);
+
+        System.out.println("Enter something");
+
+
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//        String qiut = "";
+//        List<String> list = new ArrayList<>();
+//        while (!qiut.equals("q")) {
+//            list.add(qiut = reader.readLine());
+//
+//
+//        }
+//        System.out.println(list);
+
+
 
 
     }
+
+
 }
