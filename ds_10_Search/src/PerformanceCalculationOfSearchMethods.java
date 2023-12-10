@@ -110,7 +110,7 @@ public class PerformanceCalculationOfSearchMethods {
 
             comparisons++;
             if (data < array[leftPointer]) right = leftPointer - 1;
-            else if (data > rightPointer) left = rightPointer + 1;
+            else if (data > array[rightPointer]) left = rightPointer + 1;
             else {
                 left = leftPointer + 1;
                 right = rightPointer - 1;
