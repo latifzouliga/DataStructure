@@ -22,8 +22,6 @@ public class SinglyLinkedList {
         // creating link and increasing the size
         if (isEmpty()) {
             head = tail = node;
-            //head = node;
-            //tail = node;
             size++;
         } else { // if there are elements in list
             tail.next = node;
@@ -39,7 +37,6 @@ public class SinglyLinkedList {
             head = tail = node;
             size++;
         } else {
-
             node.next = head;
             head = node;
             size++;
@@ -73,7 +70,7 @@ public class SinglyLinkedList {
         current = head;
 
         while (current != null) {
-            if (current.id == value) {
+            if (current.value == value) {
 
                 // case 1: current is head
                 if (current == head) {
@@ -112,9 +109,9 @@ public class SinglyLinkedList {
         System.out.print("[");
         while (current != null) {
 
-            if (current.next == null) System.out.print(current.id + " ,null");
+            if (current.next == null) System.out.print(current.value + " ,null");
             else {
-                System.out.print(current.id + " ,");
+                System.out.print(current.value + " ,");
             }
             current = current.next;
         }
@@ -127,7 +124,7 @@ public class SinglyLinkedList {
         Node current = head;
 
         while(current != null){
-            consumer.accept(current.id);
+            consumer.accept(current.value);
             current = current.next;
         }
 
@@ -141,7 +138,7 @@ public class SinglyLinkedList {
         index = 0;
 
         while (current != null) {
-            if (current.id == element) {
+            if (current.value == element) {
                 return index;
             }
             index++;
@@ -156,7 +153,7 @@ public class SinglyLinkedList {
         this.index = 0;
 
         while (current != null) {
-            if (this.index == index) return current.id;
+            if (this.index == index) return current.value;
             this.index++;
             current = current.next;
         }
@@ -183,7 +180,7 @@ public class SinglyLinkedList {
             p1 = p1.next;
             p2 = p2.next;
         }
-        return p1.id;
+        return p1.value;
     }
 
     public void removeKthNode(int k) {
@@ -219,6 +216,11 @@ public class SinglyLinkedList {
             size--;
         }
     }
+
+
+
+
+
 
     /**
 

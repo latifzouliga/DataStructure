@@ -1,9 +1,9 @@
 public class Node {
 
-    int id;
+    int value;
     Node next;
 
-    public Node(int id) {
-        this.id = id;
+    public Node(int value) {
+        this.value = value;
     }
 }
