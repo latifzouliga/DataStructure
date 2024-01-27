@@ -1,3 +1,5 @@
+package SinglyLinkedList;
+
 public class LinkedListUtils {
 
     public static Node mergeLinkedLists(Node head1,Node head2){
@@ -23,7 +25,7 @@ public class LinkedListUtils {
         if (p1 == null){
             p1Prev.next = p2;
         }
-        return head1.value < head1.value ? head1 : head2;
+        return head1.value < head2.value ? head1 : head2;
     }
 
     public static Node merge2List(Node head1, Node head2){

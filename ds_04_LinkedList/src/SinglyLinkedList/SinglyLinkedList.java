@@ -1,3 +1,5 @@
+package SinglyLinkedList;
+
 import java.util.function.Consumer;
 
 public class SinglyLinkedList {
@@ -226,8 +228,8 @@ public class SinglyLinkedList {
 
 //    public void removeKthNode2(int k) {
 //
-//        Node p1 = head;
-//        Node p2 = head;
+//        SinglyLinkedList.Node p1 = head;
+//        SinglyLinkedList.Node p2 = head;
 //
 //        for (int i = 0; i < k; i++) {
 //            p2 = p2.next;

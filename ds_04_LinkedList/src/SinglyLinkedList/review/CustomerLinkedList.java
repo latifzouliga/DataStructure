@@ -1,4 +1,4 @@
-package review;
+package SinglyLinkedList.review;
 
 import java.util.Arrays;
 

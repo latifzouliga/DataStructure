@@ -1,8 +1,10 @@
+package SinglyLinkedList;
+
 public class TestSinglyLinkedList {
 
 
     public static void main(String[] args) {
-//        SinglyLinkedList myList = new SinglyLinkedList();
+//        SinglyLinkedList.SinglyLinkedList myList = new SinglyLinkedList.SinglyLinkedList();
 //
 //        myList.add(12);
 //        myList.add(14);
@@ -25,7 +27,7 @@ public class TestSinglyLinkedList {
 //        System.out.println("End forEach");
 //
 //        // test deleteNodeById method
-//        SinglyLinkedList list = new SinglyLinkedList();
+//        SinglyLinkedList.SinglyLinkedList list = new SinglyLinkedList.SinglyLinkedList();
 //        for (int i = 1; i < 10; i++) {
 //            list.add(i * 10);
 //        }
@@ -80,7 +82,7 @@ public class TestSinglyLinkedList {
 //
 //        System.out.println("\n");
 //        System.out.println("------- test  an empty list ----------");
-//        SinglyLinkedList emptyList = new SinglyLinkedList();
+//        SinglyLinkedList.SinglyLinkedList emptyList = new SinglyLinkedList.SinglyLinkedList();
 //        emptyList.printNodes();
 //
 //        emptyList.deleteNodeById(1000);
@@ -107,12 +109,12 @@ public class TestSinglyLinkedList {
         list1.add(200);
         list1.add(300);
 
-//        SinglyLinkedList.merge2List(list1.head,list2.head);
+//        SinglyLinkedList.SinglyLinkedList.merge2List(list1.head,list2.head);
 //
 //        list1.printNodes();
         //list2.printNodes();
 
-//        SinglyLinkedList.merge(list1.tail,list2.head);
+//        SinglyLinkedList.SinglyLinkedList.merge(list1.tail,list2.head);
 //        list1.printNodes();
         LinkedListUtils.mergeLinkedLists(list1.head,list2.head);
         list1.printNodes();
