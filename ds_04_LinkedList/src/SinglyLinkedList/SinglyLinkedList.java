@@ -37,12 +37,11 @@ public class SinglyLinkedList {
 
         if (isEmpty()) {
             head = tail = node;
-            size++;
         } else {
             node.next = head;
             head = node;
-            size++;
         }
+        size++;
     }
 
     void addLast(int data) {
@@ -50,16 +49,15 @@ public class SinglyLinkedList {
 
         if (isEmpty()) {
             head = tail = node;
-            size++;
         } else {
             tail.next = node;
             tail = node;
-            size++;
         }
+        size++;
 
     }
 
-    void deleteNodeById(int value) {
+    void deleteNodeByValue(int value) {
 
         // check if the list is empty
         if (isEmpty()) {
@@ -220,43 +218,6 @@ public class SinglyLinkedList {
     }
 
 
-
-
-
-
-    /**
-
-//    public void removeKthNode2(int k) {
-//
-//        SinglyLinkedList.Node p1 = head;
-//        SinglyLinkedList.Node p2 = head;
-//
-//        for (int i = 0; i < k; i++) {
-//            p2 = p2.next;
-//        }
-//
-//        while (p2.next != null) {
-//            p1 = p1.next;
-//            p2 = p2.next;
-//
-//        }
-//
-//        if (p1.next == head) {
-//            head = p1.next.next;
-//            p1.next.next = null;
-//            size--;
-//        } else if (p1 == tail) {
-//            tail = p1.next;
-//            p1.next.next = null;
-//            size--;
-//        } else {
-//            p1.next = p1.next.next;
-//            p1.next = null;
-//            size--;
-//        }
-//    }
-
-*/
 
 }
 
