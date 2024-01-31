@@ -21,6 +21,7 @@ public class CollectionsQueue {
         System.out.println(queue);
 
         System.out.println("--------- Builtin Queue --------");
+        // there are 2 Queue implementations in java: LinkedList and ArrayDeque
         Queue<Integer> javaQueue = new LinkedList<>();
         javaQueue.add(1);
         javaQueue.add(2);
@@ -35,8 +36,23 @@ public class CollectionsQueue {
 
         System.out.println(javaQueue);
 
-        System.out.println("-------------- HashMap ---------------------");
-        HashMap<String,String> hashMap = new HashMap<>();
+        System.out.println("ArrayDeque");
+
+
+        System.out.println("\nthe 3 implementations of Queue");
+
+        Queue<Integer> arrayDeque = new ArrayDeque<>(List.of(2, 1, 3));    // array implementation
+        Queue<Integer> linkedList = new LinkedList<>(List.of(2, 1, 3));    // Node implementation
+        Queue<Integer> priorityQueue = new PriorityQueue<>(List.of(1,2,3)); // heap implementation
+
+        System.out.println("arrayDeque");
+        arrayDeque.forEach(System.out::println);
+
+        System.out.println("linkedList");
+        linkedList.forEach(System.out::println);
+
+        System.out.println("priorityQueue");
+        priorityQueue.forEach(System.out::println);
 
 
 
@@ -45,4 +61,6 @@ public class CollectionsQueue {
 
 
     }
+
+
 }

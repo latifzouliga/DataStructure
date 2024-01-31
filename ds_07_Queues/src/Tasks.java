@@ -43,7 +43,8 @@ public class Tasks {
         }};
         System.out.println("reverseFirstK = " + reverseFirstK(queue, 3));
 
-        // Given an array of Integers {10,6,8,20,4,9,5,17,42,47,29}
+
+        System.out.println(sortElement(List.of(20, 10, 2, 12, 78, 0)));
 
 
     }
@@ -102,4 +103,20 @@ public class Tasks {
 
         return queue;
     }
+
+
+    public static List<Integer> sortElement(List<Integer> list) {
+        Queue<Integer> queue = new PriorityQueue<>();
+        queue.addAll(list);
+
+        List<Integer> result = new ArrayList<>();
+
+        while (!queue.isEmpty()) {
+            result.add(queue.poll());
+        }
+        return result;
+    }
+
+
+
 }
