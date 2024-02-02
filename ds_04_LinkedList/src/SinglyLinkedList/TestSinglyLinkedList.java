@@ -114,10 +114,16 @@ public class TestSinglyLinkedList {
 //        list1.printNodes();
         //list2.printNodes();
 
-//        SinglyLinkedList.SinglyLinkedList.merge(list1.tail,list2.head);
+        //SinglyLinkedList.SinglyLinkedList.merge(list1.tail,list2.head);
 //        list1.printNodes();
-        LinkedListUtils.mergeLinkedLists(list1.head,list2.head);
+        //LinkedListUtils.mergeLinkedLists(list1.head, list2.head);
+         Node current = LinkedListUtils.merge2List(list1.head, list2.head);
+         while (current != null){
+             System.out.println(current.value);
+             current = current.next;
+         }
         list1.printNodes();
+
 
     }
 }
