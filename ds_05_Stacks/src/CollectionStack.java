@@ -1,7 +1,4 @@
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class CollectionStack {
     public static void main(String[] args) {
@@ -17,17 +14,32 @@ public class CollectionStack {
         cStack.push(1);
         cStack.push(2);
         cStack.push(3);
-        System.out.println("cStack.peek() = " + cStack.peek());
+//        System.out.println("cStack.peek() = " + cStack.peek());
+//        System.out.println("cStack.pop() = " + cStack.pop());
+//        System.out.println("cStack.peek() = " + cStack.peek());
+        System.out.println(cStack);
         System.out.println("cStack.pop() = " + cStack.pop());
-        System.out.println("cStack.peek() = " + cStack.peek());
+        System.out.println("cStack.pop() = " + cStack.pop());
+        System.out.println("cStack.pop() = " + cStack.pop());
 
 
-        System.out.println("------------ Legacy Stack ------------");
-        // legacy stack is still in use, but it is recommended to use Deque interface instead
-        Stack<String> legacyStack = new Stack<>();
-        legacyStack.push("A");
-        legacyStack.push("B");
-        legacyStack.push("C");
+//        System.out.println("------------ Legacy Stack ------------");
+//        // legacy stack is still in use, but it is recommended to use Deque interface instead
+//        Stack<String> legacyStack = new Stack<>();
+//        legacyStack.push("A");
+//        legacyStack.push("B");
+//        legacyStack.push("C");
+//        System.out.println(legacyStack);
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        System.out.println(stack);
+        System.out.println("stack.pop() = " + stack.pop());
+        System.out.println("stack.pop() = " + stack.pop());
+        System.out.println("stack.pop() = " + stack.pop());
+
 
 
 
