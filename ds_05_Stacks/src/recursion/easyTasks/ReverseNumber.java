@@ -1,4 +1,4 @@
-package recursion.easy;
+package recursion.easyTasks;
 
 public class ReverseNumber {
 
@@ -13,7 +13,7 @@ public class ReverseNumber {
     // 1234 needs to be printed as 4321
 
     static int reverse(int n) {
-
+        // TODO: to be implemented
         return 1;
     }
 }

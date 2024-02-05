@@ -1,4 +1,4 @@
-package recursion.easy;
+package recursion.easyTasks;
 
 public class Sum {
 
@@ -6,6 +6,8 @@ public class Sum {
         System.out.println(sum(5));
     }
 
+    // print the sum of all digits of a given number
+    // f(5) = 5 + 4 + 3 + 2 + 1
     static int sum(int n) {
         if (n <= 1) {
             return 1;

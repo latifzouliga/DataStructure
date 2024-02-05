@@ -1,4 +1,4 @@
-package recursion.easy;
+package recursion.easyTasks;
 
 public class Concept {
 
