@@ -18,6 +18,7 @@ public class RotatedBinarySearch {
         }
 
         if (arr[s] <= arr[m]) {
+            // sorted part of array
             if (target >= arr[s] && target <= arr[m]) {
                 return search(arr, target, s, m - 1);
             } else {
