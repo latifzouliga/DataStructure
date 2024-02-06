@@ -1,4 +1,4 @@
-package recursion.easyTasks;
+package easyTasks;
 
 public class SumOfDigits {
 

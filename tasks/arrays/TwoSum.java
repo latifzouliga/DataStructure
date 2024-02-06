@@ -1,3 +1,5 @@
+package arrays;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -39,5 +41,7 @@ public class TwoSum {
         }
         return new int[0];
     }
+
+    // TODO: twoSum with pointers
 
 }

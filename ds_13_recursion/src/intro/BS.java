@@ -1,4 +1,4 @@
-package recursion.intro;
+package intro;
 
 public class BS {
 
