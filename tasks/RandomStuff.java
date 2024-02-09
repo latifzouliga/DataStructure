@@ -2,14 +2,6 @@ import java.util.Arrays;
 
 public class RandomStuff {
 
-    // TODO: Solving algorithm problems with stream
-
-    //TODO: IMPLEMENT ALL THESE SORTS USING LINKED-LIST
-    // BUBBLE SORT
-    // SELECTION SORT
-    // INSERTION SORT
-    // MERGE SORT
-    // QUICK SORT
 
     public static void main(String[] args) {
         int[] arr = {0,1, 2, 3, 4};
