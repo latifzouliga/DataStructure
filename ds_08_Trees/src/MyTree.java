@@ -1,3 +1,5 @@
+import review.BTree;
+
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -6,6 +8,7 @@ public class MyTree {
     TNode root;
 
     List<Integer> list = new ArrayList<>();
+
     public MyTree() {
     }
 
@@ -127,32 +130,19 @@ public class MyTree {
 
     // Task 1: Implement finding an integer value in a BST (Binary Search Tree)
 
-    /**
-     * public boolean contains(int value) {
-     * if (root == null) return false;
-     * <p>
-     * Queue<TNode> queue = new LinkedList<>();
-     * queue.add(root);
-     * <p>
-     * while (!queue.isEmpty()) {
-     * TNode toVisit = queue.poll();
-     * if (toVisit.value == value) {
-     * return true;
-     * }
-     * if (toVisit.leftChild != null) queue.add(toVisit.leftChild);
-     * if (toVisit.rightChild != null) queue.add(toVisit.rightChild);
-     * }
-     * return false;
-     * }
-     */
+
     public boolean contains(int value) {
         if (root == null) return false;
 
         TNode current = root;
         while (current != null) {
-            if (value < current.value) current = current.leftChild;
-            else if (value > current.value) current = current.rightChild;
-            else return true;
+            if (value < current.value) {
+                current = current.leftChild;
+            } else if (value > current.value) {
+                current = current.rightChild;
+            } else {
+                return true;
+            }
         }
         return false;
     }
@@ -263,31 +253,46 @@ public class MyTree {
         return sum;
     }
 
-    public void print(TNode root, String traversalType){
+    public void print(TNode root, String traversalType) {
 
-        switch (traversalType){
-            case "level order":
-            case "level":
-                levelOrderTraversal(root);
-                break;
-            case "in order":
-            case "in":
-                inOrderTraversal(root);
-                break;
-            case "pre order":
-            case "pre":
-                preOrderTraversal(root);
-                break;
-            case "post order":
-            case "post":
-                postOrderTraversal(root);
-                break;
-            default:
-                System.out.println("Please choose the right traversal:\n" +
-                        "'in order' OR 'in', 'pre order' OR 'pre', 'post order' OR 'post', 'level order' OR 'level'" );
+        switch (traversalType) {
+            case "level order", "level" -> levelOrderTraversal(root);
+            case "in order", "in" -> inOrderTraversal(root);
+            case "pre order", "pre" -> preOrderTraversal(root);
+            case "post order", "post" -> postOrderTraversal(root);
+            default -> System.out.println("Please choose the right traversal:\n" +
+                    "'in order' OR 'in', 'pre order' OR 'pre', 'post order' OR 'post', 'level order' OR 'level'");
         }
 
     }
+
+
+    int sumOfAllNodes(TNode root){
+        if (root == null){
+            return 0;
+        }
+        return root.value + sumOfAllNodes(root.leftChild) + sumOfAllNodes(root.leftChild);
+    }
+
+
+    public List<Integer> findPath(int value) {
+
+        List<Integer> nodes = new ArrayList<>();
+        if (root == null) return List.of();
+
+        TNode current = root;
+        while (current != null) {
+            if (value < current.value) {
+                current = current.leftChild;
+            } else if (value > current.value) {
+                current = current.rightChild;
+            } else {
+
+            }
+        }
+        return nodes;
+    }
+
 
 
 }

@@ -16,6 +16,7 @@ public class FindCycle {
 
     public static void main(String[] args) {
 
+        // 1 => 2 => 3 => 4 => 5 => 6 => 3
 
         // inserting elements
         LinkedNode node1 = new LinkedNode(1);

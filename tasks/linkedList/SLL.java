@@ -25,6 +25,14 @@ public class SLL {
         size++;
     }
 
+    void print(){
+        Node current = head;
+        while (current != null){
+            System.out.print(current.value +" -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
 
 
     public static class Node {

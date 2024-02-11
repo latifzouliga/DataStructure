@@ -11,13 +11,13 @@ public class TreeApp {
 
         MyTree tree = new MyTree();
 
-        //int[] numbers = {10, 5, 12, 3, 6, 11, 13, 2,};
-        //int[] numbers = {10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
+//        int[] numbers = {10, 5, 12, 3, 6, 11, 13, 2,};
+        int[] numbers = {10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
 //        int[] numbers = {15, 18, 11, 7,4};
-//
-//        for (int i = 0; i < 5; i++) {
-//            tree.insert(numbers[i]);
-//        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            tree.insert(numbers[i]);
+        }
 
 //        VisualizeTree.printTree(tree.root, null, false);
 
@@ -73,7 +73,7 @@ public class TreeApp {
 //        int num = scanner.nextInt();
 //        System.out.println(num);
 
-        System.out.println("Enter something");
+//        System.out.println("Enter something");
 
 
 //        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
