@@ -13,6 +13,34 @@ public class MyHeap {
         this.size = 0;
     }
 
+    public MyHeap(int[] arr) {
+        this.items = arr;
+        this.size = arr.length;
+        heapify();
+    }
+
+    void heapify() {
+        int startIndex = (size / 2) - 1;
+
+        for (int i = startIndex; i >= 0; i--) {
+            heapifyIndex(i);
+        }
+    }
+
+    public void heapifyIndex(int currentIndex) {
+        // TODO: NEEDS FIXED: heapify
+//        if (!isValidParent(currentIndex)) {
+//            int maxChildIndex = largerChildIndex(currentIndex);
+//            swap(currentIndex, maxChildIndex);
+//            heapifyIndex(maxChildIndex);
+//        }
+        while (!isValidParent(currentIndex)){
+            int maxChildIndex = largerChildIndex(currentIndex);
+            swap(currentIndex, maxChildIndex);
+            currentIndex = maxChildIndex;
+        }
+    }
+
     // the peek is always in index 0
     public int peek() {
         if (size == 0) throw new NoSuchElementException();
@@ -98,7 +126,7 @@ public class MyHeap {
         if (!hasLeftChild(index)) return index;
         else if (!hasRightChild(index)) {
             return leftChildIndex(index);
-        }else {
+        } else {
             return items[leftChildIndex(index)] > items[rightChildIndex(index)] ? leftChildIndex(index) : rightChildIndex(index);
         }
 
@@ -118,7 +146,7 @@ public class MyHeap {
         System.out.println(list);
     }
 
-    public int[] sort(){
+    public int[] sort() {
         int[] sorted = new int[size];
         int length = size;
         for (int i = 0; i < length; i++) {
@@ -133,19 +161,15 @@ public class MyHeap {
     // find the Kth largest element
 
 
-    public int largestKthElement(int Kth){
+    public int largestKthElement(int Kth) {
 
         int removed = 0;
-        for (int i = 0; i < Kth -1; i++) {
+        for (int i = 0; i < Kth - 1; i++) {
             removed = remove();
             if (removed == remove()) i--;
         }
         return items[0];
     }
-
-
-
-
 
 
 }
