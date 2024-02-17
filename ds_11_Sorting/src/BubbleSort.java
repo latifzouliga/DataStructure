@@ -14,9 +14,6 @@ public class BubbleSort {
         }
         System.out.println(Arrays.toString(bubbleSort(numbers)));
 
-        Stream.iterate(0, n -> numbers[n+1])
-                .limit(numbers.length-1)
-                .forEach(System.out::println);
 
     }
 
