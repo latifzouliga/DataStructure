@@ -17,6 +17,16 @@ public class RandomStuff {
 
     public static void sort(int[] array) {
 
+        for (int i = 0; i < array.length; i++) {
+            int toInset = array[i];
+            int k = i - 1;
+            while (k >= 0 && toInset < array[k]) {
+                array[k + 1] = array[k];
+                k--;
+            }
+            array[k + 1] = toInset;
+
+        }
 
     }
 
