@@ -1,23 +1,20 @@
-import java.util.*;
-import java.util.stream.Collectors;
+package arrays;
 
-import static java.util.stream.Collectors.toList;
+import java.util.HashMap;
+import java.util.Map;
 
-
-public class RandomStuff {
-
+public class CandleCost {
 
     public static void main(String[] args) {
 
-        int[] nums1 = {4, 1, 12, 0, 10, 7, 3, 4, -1, -10};
 
 
-        System.out.println(freq(3, "xxxxxxxxxxxxxxxx"));
+        System.out.println(candleCost(3, "xxxxxxxxxxxxxxxx"));
 
 
     }
 
-    public static int freq(int m, String str) {
+    public static int candleCost(int m, String str) {
 
         Map<Character, Integer> map = new HashMap<>();
 
@@ -57,14 +54,4 @@ public class RandomStuff {
         return cost;
     }
 
-
 }
-
-
-
-
-
-
-
-
-
