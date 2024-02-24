@@ -6,7 +6,7 @@ public class MergeSort {
 
         int[] array = {100, 23, 1, 32, -10};
 
-        mergeSort(array);
+        divide(array);
         System.out.println(Arrays.toString(array));
 
 
@@ -22,39 +22,44 @@ public class MergeSort {
         Space Complexity
      */
 
-    public static void mergeSort(int[] array) {
-        if (array.length < 2) return;
+
+    // divide
+    public static void divide(int[] array) {
+
+        if (array.length < 2) {
+            return;
+        }
 
         int mid = array.length / 2;
-        int k = 0;
+        int[] left = Arrays.copyOfRange(array, 0, mid);
+        int[] right = Arrays.copyOfRange(array, mid, array.length);
 
-        int[] leftArray = new int[mid];
-        for (int i = 0; i < mid; i++) {
-            leftArray[i] = array[k++];
-        }
-
-        int[] rightArray = new int[array.length -mid];
-        for (int i = 0; i < rightArray.length ; i++) {
-            rightArray[i] = array[k++];
-        }
-
-        mergeSort(leftArray);
-        mergeSort(rightArray);
-        merge(leftArray,rightArray,array);
+        divide(left);
+        divide(right);
+        merge(left, right, array);
 
     }
 
-
+    // merge
     public static void merge(int[] left, int[] right, int[] result) {
         int i = 0;
         int j = 0;
         int k = 0;
+
         while (i < left.length && j < right.length) {
-            if (left[i] <= right[j]) result[k++] = left[i++];
-            else result[k++] = right[j++];
+            if (left[i] <= right[j]) {
+                result[k++] = left[i++];
+            } else {
+                result[k++] = right[j++];
+            }
         }
-        while (i < left.length) result[k++] = left[i++]; // if i == array.length, it will not enter this loop
-        while (j < right.length) result[k++] = right[j++];
+
+        while (i < left.length) {
+            result[k++] = left[i++];
+        }
+        while (j < right.length) {
+            result[k++] = right[j++];
+        }
     }
 
 
